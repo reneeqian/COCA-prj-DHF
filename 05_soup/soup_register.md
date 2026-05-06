@@ -10,7 +10,7 @@ Packages directly declared in medical device code repositories.
 | torch | 2.9.1 | medical_image_ai_toolkit, Coronary_prj | Runtime — ML training and inference | BSD-3-Clause | pip-audit | 2026-05-05 |
 | matplotlib | 3.10.8 | medical_image_ai_toolkit, Coronary_prj | Runtime — visualization and PDF reports | PSF | pip-audit | 2026-05-05 |
 | openpyxl | 3.1.5 | Coronary_prj | Runtime — Agatston score spreadsheet (scores.xlsx) | MIT | pip-audit | 2026-05-05 |
-| pydicom | 3.0.1 | Coronary_prj | Runtime — DICOM file reading for CT volumes | MIT | pip-audit | 2026-05-05 |
+| pydicom | 3.0.2 | Coronary_prj | Runtime — DICOM file reading for CT volumes | MIT | pip-audit | 2026-05-05 |
 | scikit-image | 0.25.2 | Coronary_prj | Runtime — polygon rasterization for segmentation masks | BSD-3-Clause | pip-audit | 2026-05-05 |
 | pyyaml | 6.0.3 | regulatory_tools | Runtime — YAML parsing for requirements and config | MIT | pip-audit | 2026-05-05 |
 | forge-utils | 0.1.0 | regulatory_tools, medical_image_ai_toolkit, Coronary_prj | Runtime — health grading and traceability infrastructure | Internal | manual review | 2026-05-05 |

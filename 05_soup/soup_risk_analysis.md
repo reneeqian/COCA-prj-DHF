@@ -8,7 +8,7 @@
 | torch | Model inference returns wrong shape or NaN outputs | Serious | RSK-001 (NaN detection), RSK-002 (model manifest), tests cover inference paths |
 | matplotlib | Report generation failure (PDF output corrupted or empty) | Minor | Advisory output only; failure does not affect clinical output |
 | openpyxl | xlsx parse failure — scores read as wrong vessel or patient ID | Serious | DatasetStructureError boundary in ingestor; CI tests verify score loading |
-| pydicom | DICOM read failure — corrupt pixel data, wrong slice order | Serious | RSK-003 (DatasetStructureError boundary); input validation in ingestor |
+| pydicom | DICOM read failure — corrupt pixel data, wrong slice order; path traversal in FileSet/DICOMDIR (CVE-2026-32711 fixed in 3.0.2) | Serious | RSK-003 (DatasetStructureError boundary); input validation in ingestor; pinned to 3.0.2+ |
 | scikit-image | Polygon rasterization error — mask region incorrect | Serious | Output is advisory only (SYS-007); test_risk_controls.py covers Dice threshold gate |
 | pyyaml | YAML parse failure in requirements.yaml or soup.yaml | Minor | Affects regulatory_tools tooling, not clinical pipeline; CI validates YAML schema |
 | forge-utils | Health grade miscalculated — CI gate passes below Grade B | Minor | Manual review at each forge release; not part of clinical inference path |
