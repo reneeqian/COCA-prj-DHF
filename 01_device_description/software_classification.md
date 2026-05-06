@@ -1,31 +1,33 @@
-# Software Classification — {{PROJECT_NAME}}
+# Software Classification — COCA-prj
 
-## IEC 62304 Classification: {{IEC_62304_CLASS}}
+## IEC 62304 Classification: Class B
 
 ### Decision Rationale
 
 | Criterion | Assessment |
 |-----------|-----------|
-| Serious injury possible if software fails? | {{YES_NO}} |
-| Injury mitigated by operator or other means? | {{YES_NO}} |
-| Death possible if software fails? | {{YES_NO}} |
+| Serious injury possible if software fails? | Yes — missed calcium detection (false negative) could delay treatment |
+| Injury mitigated by operator or other means? | Yes — output is advisory only; radiologist makes final clinical decision (SYS-007) |
+| Death possible if software fails? | Not directly — clinical decision remains with radiologist |
 
-**Resulting class:** {{IEC_62304_CLASS}}
+**Resulting class: B** — serious injury possible but mitigated by advisory-only design.
 
-*Class A: no injury or negligible injury possible.*
-*Class B: serious injury possible but not death.*
-*Class C: death possible.*
+Class C does not apply because death is not directly caused by software failure alone
+given the advisory-only architecture mandated by SYS-007.
 
-### Implications
+### Implications for COCA-prj
 
-- **Class A:** Minimal lifecycle documentation required; no unit testing mandate.
-- **Class B:** Software development plan, risk management, system testing, and regression testing required.
-- **Class C:** All Class B requirements plus formal code review, unit testing, and structural coverage analysis.
+Per IEC 62304 Class B:
+- Software development plan required ✓ (CLAUDE.md, branch policy)
+- Risk management required ✓ (04_risk_management/)
+- System testing required ✓ (`python runtests.py`, smoke tests)
+- Regression testing required ✓ (CI forge-health + pytest on every push)
 
 ## FDA Risk Classification
 
-{{FDA_RISK_CLASSIFICATION}}
+AI/ML-enabled SaMD — moderate risk (Class II analog). Advisory output,
+not standalone diagnostic.
 
 ## Regulatory Pathway
 
-{{REGULATORY_PATHWAY}}
+Intended for 510(k) or De Novo pathway pending performance validation.
