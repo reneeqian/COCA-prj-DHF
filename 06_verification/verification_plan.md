@@ -1,8 +1,8 @@
-# Verification Plan — {{PROJECT_NAME}}
+# Verification Plan — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Scope
 
-Verification activities per IEC 62304 §8 for {{PROJECT_NAME}}.
+Verification activities per IEC 62304 §8 for <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->.
 
 ## Verification Approach
 
@@ -16,7 +16,7 @@ Verification activities per IEC 62304 §8 for {{PROJECT_NAME}}.
 ## Verification Entry Points
 
 ```bash
-cd {{CODE_REPO}} && python runtests.py   # runs tests + generates traceability matrix + forge health
+cd <!-- DHF_VAR:CODE_REPO -->Coronary_prj, medical_image_ai_toolkit, regulatory_tools<!-- /DHF_VAR:CODE_REPO --> && python runtests.py   # runs tests + generates traceability matrix + forge health
 ```
 
 ## Evidence Generation

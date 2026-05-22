@@ -1,4 +1,4 @@
-# System Requirements — {{PROJECT_NAME}}
+# System Requirements — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Machine-Readable Requirements
 
@@ -13,15 +13,25 @@ matrices in each code repository.
 
 ## Requirements Summary
 
-| Domain | Count | Description |
-|--------|-------|-------------|
-| SYS | — | System-level behavior |
-| DAT | — | Data ingestion and validation |
-| TRN | — | Model training |
-| MOD | — | Model architecture |
-| VER | — | Verification and evidence |
-| RSK | — | Risk controls |
-| REP | — | Reporting |
-| DOC | — | Documentation |
+<!-- DHF_SYSTEM_REQUIREMENTS_START -->
+### By Domain
 
-*Update this table when requirements are added.*
+| Domain | Count |
+|--------|-------|
+| DAT | 16 |
+| DOC | 3 |
+| INF | 2 |
+| MOD | 6 |
+| REP | 4 |
+| RSK | 4 |
+| SYS | 7 |
+| TRN | 5 |
+| TSK | 6 |
+| VER | 3 |
+
+### By Type
+
+| Type | Count |
+|------|-------|
+| system_requirement | 56 |
+<!-- DHF_SYSTEM_REQUIREMENTS_END -->
