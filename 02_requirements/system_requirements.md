@@ -27,11 +27,14 @@ matrices in each code repository.
 | SYS | 7 |
 | TRN | 5 |
 | TSK | 6 |
+| UN | 3 |
 | VER | 3 |
 
 ### By Type
 
 | Type | Count |
 |------|-------|
-| system_requirement | 56 |
+| risk_control | 4 |
+| system_requirement | 52 |
+| user_need | 3 |
 <!-- DHF_SYSTEM_REQUIREMENTS_END -->
