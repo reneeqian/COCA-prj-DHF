@@ -17,13 +17,20 @@ Records the exact Git SHAs of all component repositories at each release.
 | medical_image_ai_toolkit | SaMD-DHF-update branch HEAD | 7f49c83690c5c0cc9d2d6b0bb6302f70f56c9078 |
 | Coronary_prj | SaMD-DHF-update branch HEAD | ef45b28dac38e3e72b95a63610182b2c0d6024c8 |
 
+## Coronary_prj Git Tags
+
+Auto-generated from `git tag -l` on the Coronary_prj repository.
+
+<!-- DHF_BASELINE_REGISTER_START -->
+<!-- DHF_BASELINE_REGISTER_END -->
+
 ## How to Record a Baseline
 
 ```bash
 git -C /path/to/repo rev-parse HEAD
 ```
 
-Add the SHA to the table above. All SHAs for release baselines must correspond to tagged commits.
+Add the SHA to the Release Baselines table above. All SHAs for release baselines must correspond to tagged commits.
 
 ## Notes
 

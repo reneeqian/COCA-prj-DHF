@@ -34,7 +34,17 @@ matrices in each code repository.
 
 | Type | Count |
 |------|-------|
+| design_requirement | 7 |
 | risk_control | 4 |
-| system_requirement | 52 |
+| system_requirement | 45 |
 | user_need | 3 |
+
+### By Source File
+
+| Source File | Count |
+|-------------|-------|
+| design | 7 |
+| requirements | 45 |
+| risk_controls | 4 |
+| user_needs | 3 |
 <!-- DHF_SYSTEM_REQUIREMENTS_END -->
