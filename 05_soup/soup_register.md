@@ -1,5 +1,22 @@
 # SOUP Register — COCA-prj
 
+## soup.yaml Contents
+
+Auto-generated from `docs/soup.yaml` in Coronary_prj. Source of truth for version and license.
+
+<!-- DHF_SOUP_TABLE_START -->
+| Name | Version | Purpose | License |
+|------|---------|---------|---------|
+| numpy | 2.2.6 | Array operations for image volume manipulation and mask generation | BSD-3-Clause |
+| torch | 2.9.1 | Deep learning model training and inference (UNet2D, CalciumScoreRegressor) | BSD-3-Clause |
+| matplotlib | 3.10.8 | Visualization for training plots and run reports | PSF |
+| openpyxl | 3.1.5 | Reading Agatston score spreadsheet (scores.xlsx) for nongated dataset | MIT |
+| forge-utils | 0.2.0 | Regulatory health grading and traceability infrastructure | Internal |
+| pydicom | 3.0.2 | DICOM file reading for gated and nongated CT volumes | MIT |
+| scikit-image | 0.25.2 | Polygon rasterization for segmentation mask generation | BSD-3-Clause |
+| idna | 3.15 | Internationalized domain names; pinned >=3.15 to close CVE-2026-45409 | BSD-3-Clause |
+<!-- DHF_SOUP_TABLE_END -->
+
 ## Direct SOUP
 
 Packages directly declared in medical device code repositories.

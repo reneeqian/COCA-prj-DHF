@@ -2,15 +2,25 @@
 
 ## Hazard Table
 
-| ID | Hazard | Potential Harm | Severity | Probability | Risk Level | RSK Requirement |
-|----|--------|---------------|----------|-------------|-----------|-----------------|
-| H-001 | Missed calcium detection (false negative segmentation) | Delayed/missed cardiovascular risk assessment | Serious | Remote | Moderate | Coronary_prj RSK-001 |
-| H-002 | Over-estimation of calcium score (false positive regression) | Unnecessary further workup or treatment | Minor | Remote | Low | Coronary_prj RSK-002 |
-| H-003 | Silent ingestion failure — corrupt DICOM processed as valid | Wrong model input, incorrect output | Serious | Remote | Moderate | Coronary_prj RSK-003 |
-| H-004 | Numerical instability — NaN in log-transformed targets | Training failure or corrupted model weights | Minor | Remote | Low | Coronary_prj RSK-004 |
-| H-005 | NaN loss propagation corrupting model weights | Corrupted model produces unreliable outputs | Serious | Remote | Moderate | toolkit RSK-001 |
-| H-006 | Artifact-model mismatch — wrong model loaded at inference | Incorrect predictions, undetected error | Serious | Remote | Moderate | toolkit RSK-002 |
-| H-007 | Training data leaking into test evaluation | Falsely optimistic performance metrics | Minor | Remote | Low | toolkit RSK-003 |
+<!-- DHF_HAZARD_ANALYSIS_START -->
+| ID | Hazard | Cause | Effect | Severity | Probability | Mitigation |
+|----|--------|-------|--------|----------|-------------|------------|
+| HAZ-001 | Missed coronary calcium (false negative) | Model underperforms on low-density or small-volume calcification | Radiologist underestimates cardiovascular risk; delayed clinical follow-up | serious | remote | RSK-001 |
+| HAZ-002 | Over-estimated calcium score (false positive) | Regression model over-predicts Agatston score on ambiguous anatomy | Unnecessary further workup or treatment escalation | minor | remote | RSK-002 |
+| HAZ-003 | Silent ingestion failure — corrupt or missing DICOM processed as valid | Ingestor fails to raise an error on malformed input and produces partial output | Wrong model input leads to incorrect output without operator awareness | serious | remote | RSK-003 |
+| HAZ-004 | NaN propagation from log-transformed regression targets | Zero or negative Agatston score not handled before log1p transformation | NaN loss corrupts training or produces undefined regression output | minor | remote | RSK-004 |
+<!-- DHF_HAZARD_ANALYSIS_END -->
+
+## Toolkit Hazards (medical_image_ai_toolkit)
+
+These hazards apply to the shared ML infrastructure used by this project.
+They are maintained manually here and mitigated by toolkit-level risk controls.
+
+| ID | Hazard | Cause | Effect | Severity | Probability | Mitigation |
+|----|--------|-------|--------|----------|-------------|------------|
+| H-005 | NaN loss propagation corrupting model weights | Loss function receives NaN from task output | Corrupted model produces unreliable outputs | Serious | Remote | toolkit RSK-001 |
+| H-006 | Artifact-model mismatch — wrong model loaded at inference | No schema binding between saved weights and model class | Incorrect predictions, undetected error | Serious | Remote | toolkit RSK-002 |
+| H-007 | Training data leaking into test evaluation | Incorrect partitioning or shared patient IDs across splits | Falsely optimistic performance metrics | Minor | Remote | toolkit RSK-003 |
 
 ## Severity Scale
 

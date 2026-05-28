@@ -1,0 +1,22 @@
+project_name: "COCA-prj"
+responsible_person: "Renee Qian"
+code_repos:
+  - "Coronary_prj"
+  - "medical_image_ai_toolkit"
+  - "regulatory_tools"
+author: "Renee Qian"
+
+data_sources:
+  soup: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/soup.yaml"
+  evidence_runs: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/artifacts/evidence_runs"
+  requirements:
+    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/user_needs.yaml"
+    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/requirements.yaml"
+    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/design.yaml"
+    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/risk_controls.yaml"
+  hazard_analysis: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/hazard_analysis.yaml"
+  traceability_matrix: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/traceability_matrix.md"
+
+templates_root: "/Users/reneeqian/Documents/PythonStuff/Utilities/SaMD-DHF-Templates"
+
+git_repo: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj"
