@@ -1,4 +1,4 @@
-# Threat Model — {{PROJECT_NAME}}
+# Threat Model — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Data Flows
 

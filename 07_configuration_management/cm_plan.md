@@ -1,4 +1,4 @@
-# Configuration Management Plan — {{PROJECT_NAME}}
+# Configuration Management Plan — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Branching Strategy
 

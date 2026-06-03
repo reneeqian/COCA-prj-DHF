@@ -1,4 +1,4 @@
-# Change Control Procedure — {{PROJECT_NAME}}
+# Change Control Procedure — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Change Categories
 

@@ -1,8 +1,8 @@
-# Risk Management Plan — {{PROJECT_NAME}}
+# Risk Management Plan — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Scope
 
-This plan covers software-related risks for {{PROJECT_NAME}} per ISO 14971:2019.
+This plan covers software-related risks for <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME --> per ISO 14971:2019.
 
 ## Responsibilities
 

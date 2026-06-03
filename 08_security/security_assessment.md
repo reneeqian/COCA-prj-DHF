@@ -1,4 +1,4 @@
-# Security Assessment — {{PROJECT_NAME}}
+# Security Assessment — <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME -->
 
 ## Static Analysis
 
