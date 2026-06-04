@@ -15,6 +15,7 @@ data_sources:
     - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/design.yaml"
     - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/risk_controls.yaml"
   hazard_analysis: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/hazard_analysis.yaml"
+  anomaly_log: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/anomaly_log.yaml"
   traceability_matrix: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/traceability_matrix.md"
 
 templates_root: "/Users/reneeqian/Documents/PythonStuff/Utilities/SaMD-DHF-Templates"
