@@ -20,9 +20,10 @@ Intentional changes (new features, planned refactors) belong in
 
 ## Anomaly Table
 
+<!-- DHF_ANOMALY_TABLE_START -->
 | ID | Discovered | Severity | Status | Description | Safety Impact | Resolution | Linked PR | Closed |
 |---|---|---|---|---|---|---|---|---|
-| ANO-001 | {{DATE}} | {{SEVERITY}} | Open / Closed | {{DESCRIPTION}} | {{YES_NO}} — {{IMPACT_RATIONALE}} | {{RESOLUTION}} | {{PR_LINK}} | {{DATE}} |
+<!-- DHF_ANOMALY_TABLE_END -->
 
 ## Status Definitions
 
@@ -40,8 +41,10 @@ Intentional changes (new features, planned refactors) belong in
 Per FDA 510(k) submission requirements, all unresolved anomalies at the time of submission
 must be listed below with a rationale for why each does not pose unacceptable risk.
 
+<!-- DHF_UNRESOLVED_ANOMALIES_START -->
 | ANO-ID | Severity | Rationale for Deferral |
 |---|---|---|
 | — | — | — |
+<!-- DHF_UNRESOLVED_ANOMALIES_END -->
 
 *If this table is empty, there are no known unresolved anomalies at submission.*
