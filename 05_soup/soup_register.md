@@ -8,8 +8,8 @@ Auto-generated from `docs/soup.yaml` in Coronary_prj. Source of truth for versio
 | Name | Version | Purpose | License |
 |------|---------|---------|---------|
 | numpy | 2.2.6 | Array operations for image volume manipulation and mask generation | BSD-3-Clause |
-| torch | 2.9.1 | Deep learning model training and inference (UNet2D, CalciumScoreRegressor) | BSD-3-Clause |
-| matplotlib | 3.10.8 | Visualization for training plots and run reports | PSF |
+| torch | 2.12.0 | Deep learning model training and inference (UNet2D, CalciumScoreRegressor) | BSD-3-Clause |
+| matplotlib | 3.10.9 | Visualization for training plots and run reports | PSF |
 | openpyxl | 3.1.5 | Reading Agatston score spreadsheet (scores.xlsx) for nongated dataset | MIT |
 | forge-utils | 0.2.0 | Regulatory health grading and traceability infrastructure | Internal |
 | pydicom | 3.0.2 | DICOM file reading for gated and nongated CT volumes | MIT |
@@ -24,8 +24,8 @@ Packages directly declared in medical device code repositories.
 | Package | Version | Repo(s) | Role | License | CVE Check | Last Audited |
 |---------|---------|---------|------|---------|-----------|--------------|
 | numpy | 2.2.6 | medical_image_ai_toolkit, Coronary_prj | Runtime — array ops for image volumes | BSD-3-Clause | pip-audit | 2026-05-05 |
-| torch | 2.9.1 | medical_image_ai_toolkit, Coronary_prj | Runtime — ML training and inference | BSD-3-Clause | pip-audit | 2026-05-20 |
-| matplotlib | 3.10.8 | medical_image_ai_toolkit, Coronary_prj | Runtime — visualization and PDF reports | PSF | pip-audit | 2026-05-05 |
+| torch | 2.12.0 | medical_image_ai_toolkit, Coronary_prj | Runtime — ML training and inference | BSD-3-Clause | pip-audit | 2026-06-08 |
+| matplotlib | 3.10.9 | medical_image_ai_toolkit, Coronary_prj | Runtime — visualization and PDF reports | PSF | pip-audit | 2026-06-08 |
 | openpyxl | 3.1.5 | Coronary_prj | Runtime — Agatston score spreadsheet (scores.xlsx) | MIT | pip-audit | 2026-05-05 |
 | pydicom | 3.0.2 | Coronary_prj | Runtime — DICOM file reading for CT volumes | MIT | pip-audit | 2026-05-05 |
 | scikit-image | 0.25.2 | Coronary_prj | Runtime — polygon rasterization for segmentation masks | BSD-3-Clause | pip-audit | 2026-05-05 |
@@ -44,36 +44,27 @@ Packages introduced indirectly. Audited automatically by pip-audit in each consu
 | toml | 0.10.2 | forge-utils | Parsing forge.toml configuration files | MIT | Clean |
 | idna | ≥3.15 | requests (transitive) | Internationalized domain names — network I/O | BSD-3-Clause | Pinned ≥3.15 (CVE-2026-45409 fixed in 3.15) |
 
-## Residual Risk — torch 2.9.1 CVEs
+## CVE Resolution — torch 2.9.1 → 2.12.0
 
-pip-audit reports 11 CVEs against torch 2.9.1. No fix versions are available from PyTorch as of
-2026-05-20. Risk has been reviewed and accepted per the rationale below.
+The 11 CVEs previously documented against torch 2.9.1 (residual risk accepted 2026-05-20) are
+all resolved in torch 2.12.0. pip-audit against `torch==2.12.0` reports no known vulnerabilities
+as of 2026-06-08. The residual risk acceptance is closed; no outstanding torch CVEs remain.
 
-**Risk acceptance rationale:** This software runs as a clinical workstation tool with no exposed
-network service or public API. Exploitation of all 11 CVEs requires local host access — an
-attacker who already has a local session can cause greater harm via other means. The three CVEs
-with any remote-attack language (CVE-2025-2148) additionally require "high attack complexity" and
-are rated by the reporter as "exploitation appears to be difficult." None of the CVEs affect the
-inference or DICOM-processing code paths that influence clinical output; they are confined to
-profiler, JIT compiler, CUDA allocator, and RNN helper functions that are not used at inference
-time in this system. The system is deployed in a controlled clinical network environment with
-restricted local access. Residual risk is accepted; no upgrade path exists.
+| CVE | PYSEC | Resolution |
+|-----|-------|------------|
+| CVE-2025-63396 | PYSEC-2025-210 | Fixed in torch 2.12.0 |
+| CVE-2025-3121 | PYSEC-2025-196 | Fixed in torch 2.12.0 |
+| CVE-2025-3000 | PYSEC-2025-194 | Fixed in torch 2.12.0 |
+| CVE-2025-3001 | PYSEC-2025-195 | Fixed in torch 2.12.0 |
+| CVE-2025-2999 | PYSEC-2025-193 | Fixed in torch 2.12.0 |
+| CVE-2025-2998 | PYSEC-2025-192 | Fixed in torch 2.12.0 |
+| CVE-2026-4538 | PYSEC-2026-139 | Fixed in torch 2.12.0 |
+| CVE-2025-2953 | PYSEC-2025-191 | Fixed in torch 2.12.0 |
+| CVE-2025-3136 | PYSEC-2025-197 | Fixed in torch 2.12.0 |
+| CVE-2025-2148 | PYSEC-2025-189 | Fixed in torch 2.12.0 |
+| CVE-2025-2149 | PYSEC-2025-190 | Fixed in torch 2.12.0 |
 
-| CVE | PYSEC | Affected component | Attack vector | Severity | Fix available |
-|-----|-------|--------------------|---------------|----------|---------------|
-| CVE-2025-63396 | PYSEC-2025-210 | torch.profiler (PythonTracer) | Local | Medium | None |
-| CVE-2025-3121 | PYSEC-2025-196 | torch.jit.jit_module_from_flatbuffer | Local | Medium | None |
-| CVE-2025-3000 | PYSEC-2025-194 | torch.jit.script | Local | Critical | None |
-| CVE-2025-3001 | PYSEC-2025-195 | torch.lstm_cell | Local | Critical | None |
-| CVE-2025-2999 | PYSEC-2025-193 | torch.nn.utils.rnn.unpack_sequence | Local | Critical | None |
-| CVE-2025-2998 | PYSEC-2025-192 | torch.nn.utils.rnn.pad_packed_sequence | Local | Critical | None |
-| CVE-2026-4538 | PYSEC-2026-139 | pt2 Loading Handler (deserialization) | Local | Medium | None |
-| CVE-2025-2953 | PYSEC-2025-191 | torch.mkldnn_max_pool2d | Local | Low | None |
-| CVE-2025-3136 | PYSEC-2025-197 | CUDACachingAllocator | Local | Medium | None |
-| CVE-2025-2148 | PYSEC-2025-189 | Tuple Handler (jit_fut callbacks) | Network (high complexity) | Critical | None |
-| CVE-2025-2149 | PYSEC-2025-190 | nnq_Sigmoid (quantized module) | Local | Low | None |
-
-**Review date:** 2026-05-20 | **Reviewed by:** Renee Qian | **Next review:** 2026-11-20 or on next PyTorch release
+**Closed:** 2026-06-08 | **Reviewed by:** Renee Qian | **Trigger:** upgrade to torch 2.12.0 via Dependabot
 
 ## Notes
 
