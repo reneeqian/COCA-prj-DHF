@@ -14,7 +14,7 @@ High and critical CVEs are blocking via branch protection rules.
 
 | Control | Status | Notes |
 |---------|--------|-------|
-| Static analysis (CodeQL) | Active | {{STATUS}} |
-| Dependency scanning (pip-audit) | Active | {{STATUS}} |
-| Automated CVE monitoring (Dependabot) | Active | {{STATUS}} |
+| Static analysis (CodeQL) | Active | Configured in all code repos; results visible in GitHub Security tab |
+| Dependency scanning (pip-audit) | Active | Runs on every push and weekly schedule; High/Critical CVEs block merge |
+| Automated CVE monitoring (Dependabot) | Active | Configured in Coronary_prj, medical_image_ai_toolkit, regulatory_tools |
 | GPL/AGPL license blocking | Active | dependency-review.yml |

@@ -17,19 +17,28 @@ output (SYS-007).
 ## DHF Structure
 
 ```
-01_device_description/    — intended use (SYS-007), software classification
-02_requirements/          — requirements index and traceability links
-03_architecture/          — component architecture and interfaces
-04_risk_management/       — hazard analysis (RSK-001–007), risk controls
-05_soup/                  — SOUP register (8 direct + transitive)
-06_verification/          — verification plan and evidence index
+01_device_description/       — intended use (SYS-007), software classification
+02_requirements/             — requirements index and traceability links
+03_architecture/             — component architecture and interfaces
+04_risk_management/          — hazard analysis (RSK-001–007), risk controls
+05_soup/                     — SOUP register (8 direct + transitive)
+06_verification/             — verification plan and evidence index
 07_configuration_management/ — baseline register with repo SHAs
-08_security/              — threat model and security assessment
-09_change_control/        — change control and log
+08_security/                 — threat model and security assessment
+09_change_control/           — change control and log
+10_software_development_plan/ — IEC 62304 §5.1 software development plan
+11_anomaly_log/              — IEC 62304 §9 problem resolution record
+12_tool_validation/          — FDA 21 CFR 820.70(i) tool qualification records
+13_ai_ml/                    — PCCP, training data description, monitoring plan
+14_maintenance_plan/         — IEC 62304 §6.1 post-release maintenance plan
+15_usability/                — IEC 62366 usability engineering plan
 ```
 
 ## Regulatory References
 
-- IEC 62304:2006+AMD1:2015
-- ISO 14971:2019
-- FDA AI/ML SaMD Action Plan (2021)
+- IEC 62304:2006+AMD1:2015 — Medical device software lifecycle processes
+- ISO 14971:2019 — Risk management for medical devices
+- IEC 62366-1:2015 — Usability engineering for medical devices
+- FDA Guidance: Artificial Intelligence and Machine Learning in Software as a Medical Device (2021)
+- FDA Guidance: Cybersecurity in Medical Devices (2023)
+- FDA 21 CFR Part 820.70(i) — Production and process controls (software tools)

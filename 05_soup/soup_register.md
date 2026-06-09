@@ -7,14 +7,15 @@ Auto-generated from `docs/soup.yaml` in Coronary_prj. Source of truth for versio
 <!-- DHF_SOUP_TABLE_START -->
 | Name | Version | Purpose | License |
 |------|---------|---------|---------|
-| numpy | 2.2.6 | Array operations for image volume manipulation and mask generation | BSD-3-Clause |
-| torch | 2.12.0 | Deep learning model training and inference (UNet2D, CalciumScoreRegressor) | BSD-3-Clause |
-| matplotlib | 3.10.9 | Visualization for training plots and run reports | PSF |
-| openpyxl | 3.1.5 | Reading Agatston score spreadsheet (scores.xlsx) for nongated dataset | MIT |
-| forge-utils | 0.2.0 | Regulatory health grading and traceability infrastructure | Internal |
-| pydicom | 3.0.2 | DICOM file reading for gated and nongated CT volumes | MIT |
-| scikit-image | 0.25.2 | Polygon rasterization for segmentation mask generation | BSD-3-Clause |
-| idna | 3.15 | Internationalized domain names; pinned >=3.15 to close CVE-2026-45409 | BSD-3-Clause |
+| numpy | 2.2.6 |  | BSD-3-Clause |
+| torch | 2.12.0 |  | BSD-3-Clause |
+| matplotlib | 3.10.9 |  | PSF |
+| openpyxl | 3.1.5 |  | MIT |
+| forge-utils | 0.3.0 |  | Internal |
+| pydicom | 3.0.2 |  | MIT |
+| scikit-image | 0.25.2 |  | BSD-3-Clause |
+| idna | 3.15 |  | BSD-3-Clause |
+| mypy | 2.1.0 |  | MIT |
 <!-- DHF_SOUP_TABLE_END -->
 
 ## Direct SOUP
