@@ -7,17 +7,17 @@ code_repos:
 author: "Renee Qian"
 
 data_sources:
-  soup: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/soup.yaml"
-  evidence_runs: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/artifacts/evidence_runs"
+  soup: "docs/soup.yaml"
+  evidence_runs: "artifacts/evidence_runs"
   requirements:
-    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/user_needs.yaml"
-    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/requirements.yaml"
-    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/design.yaml"
-    - "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/risk_controls.yaml"
-  hazard_analysis: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/hazard_analysis.yaml"
-  anomaly_log: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/anomaly_log.yaml"
-  traceability_matrix: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj/docs/traceability_matrix.md"
+    - "docs/user_needs.yaml"
+    - "docs/requirements.yaml"
+    - "docs/design.yaml"
+    - "docs/risk_controls.yaml"
+  hazard_analysis: "docs/hazard_analysis.yaml"
+  anomaly_log: "docs/anomaly_log.yaml"
+  traceability_matrix: "docs/traceability_matrix.md"
 
-templates_root: "/Users/reneeqian/Documents/PythonStuff/Utilities/SaMD-DHF-Templates"
+templates_root: "../../Utilities/SaMD-DHF-Templates"
 
-git_repo: "/Users/reneeqian/Documents/PythonStuff/Medical_Image_Projects/Coronary_prj"
+git_repo: "."
