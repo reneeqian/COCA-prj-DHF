@@ -4,7 +4,7 @@
 
 | Version | Date | Category | Description | Risk Impact | Author |
 |---------|------|----------|-------------|------------|--------|
-| 0.1.0 | {{DATE}} | Initial | Initial DHF creation | None | <!-- DHF_VAR:AUTHOR -->Renee Qian<!-- /DHF_VAR:AUTHOR --> |
+| 0.1.0 | 2026-05-05 | Initial | Initial DHF creation | None | <!-- DHF_VAR:AUTHOR -->Renee Qian<!-- /DHF_VAR:AUTHOR --> |
 
 ## Recent Commits (auto-generated)
 
@@ -13,7 +13,35 @@ Auto-generated from `git log --oneline --no-merges` on the Coronary_prj reposito
 <!-- DHF_CHANGE_LOG_START -->
 | Version | SHA | Description |
 |---------|-----|-------------|
-| 0.1.0 | 412fddd | feat: add user_need and risk_control typed requirements (DHF-001) |
+| 0.1.0 | 5aac480 | feat(dev): add mypy 2.1.0 as qualified verification tool |
+| 0.1.0 | 3e73bcc | chore(deps): bump actions/setup-python from 5 to 6 |
+| 0.1.0 | 766a67c | chore(deps): bump actions/dependency-review-action from 4 to 5 |
+| 0.1.0 | 2549672 | fix(ci): switch sync-main-to-dev to workflow_run trigger |
+| 0.1.0 | 8ef2021 | chore(deps): bump actions/add-to-project from 1.0.2 to 2.0.0 |
+| 0.1.0 | e9d897d | fix(ci): skip bot-triggered forge-health runs; fix Dependabot secret access |
+| 0.1.0 | bfb2c75 | chore(gitignore): exclude project_summary.md and refresh traceability matrix |
+| 0.1.0 | 5584c1b | chore(deps): bump idna from 3.15 to 3.18 |
+| 0.1.0 | 236e416 | chore(deps): bump peter-evans/find-comment from 3 to 4 |
+| 0.1.0 | 084af66 | ci: add GitHub Actions workflow to auto-add issues/PRs to project board |
+| 0.1.0 | 2be547f | fix(audit): replace anomaly_log.md with machine-readable yaml |
+| 0.1.0 | ad6a63d | fix(audit): add anomaly log (IEC 62304 §9.1) |
+| 0.1.0 | 45c3ca1 | dev → main: forge-utils v0.3.0, conflict resolution, CI hardening (#55) |
+| 0.1.0 | 0a4c54b | dev → main: SOUP hygiene, torch/matplotlib bump, CI fixes (#54) |
+| 0.1.0 | bc20606 | fix(ci): remove unpinned heavy-dep pre-installs from forge-health |
+| 0.1.0 | dea650e | fix(ci): pin dhf-impact.yml to regulatory_tools@v1.1.0 |
+| 0.1.0 | c8fcc93 | chore(soup): bump torch/matplotlib, pin idna, add risk+verified_by fields (#53) |
+| 0.1.0 | 9570e20 | Bump actions/checkout from 4 to 6 (#50) |
+| 0.1.0 | 2911da7 | Bump github/codeql-action from 3 to 4 (#49) |
+| 0.1.0 | 48486e2 | Bump peter-evans/create-or-update-comment from 4 to 5 (#48) |
+| 0.1.0 | 06b887a | Bump actions/cache from 4 to 5 (#47) |
+| 0.1.0 | 7b8b42c | Bump actions/upload-artifact from 4 to 7 (#46) |
+| 0.1.0 | cf34527 | dev → main: requirements architecture, DHF integration, RTM with verification fields (#44) |
+| 0.1.0 | 3c28b95 | fix(ci): remove unpinned torch/numpy/matplotlib pre-install from pip-audit |
+| 0.1.0 | c82fbef | docs: declare IEC 62304 samd_class: C in requirements.yaml metadata (#45) |
+| 0.1.0 | 1319cdc | ci: post forge-health status before push to satisfy branch protection |
+| 0.1.0 | 0fc87c7 | ci: auto-sync main into dev after every merge |
+| 0.1.0 | a19b836 | chore(ci): remove auto-merge workflow (#43) |
+| 0.1.0 | bc1e4e0 | feat(dhf): requirements split, derived_from links, hazard analysis, RTM with verification fields (#42) |
 | 0.1.0 | eaafe30 | test: Phase 9 — test quality remediation (FIRST+AAA, 1R, ES, BC) (#41) |
 | 0.1.0 | be532b4 | fix(deps): pin idna>=3.15 to close CVE-2026-45409 (#37) |
 | 0.1.0 | 18bb989 | ci: add pip-audit policy script and update forge-utils to v0.2.0 (#40) |
@@ -39,7 +67,9 @@ Auto-generated from `git log --oneline --no-merges` on the Coronary_prj reposito
 | 0.1.0 | 7b9fb56 | added nongated ingestor, task definition, and model for calcium score regression. Also added a smoketest script for nongated training and tests for the new ingestor and task definition. Updated README, requirements, traceability matrix, and pyproject.toml to reflect the new additions. |
 | 0.1.0 | 431d732 | docs: update forge health report [skip ci] |
 | 0.1.0 | 3540301 | feat: add status_report and PDF export support |
+| 0.1.0 | cddabf2 | docs: update forge health report [skip ci] |
 | 0.1.0 | e504eb2 | feat: add Kaggle training script and update smoketest to use latest sweep params |
+| 0.1.0 | 1ae6a0e | docs: update forge health report [skip ci] |
 | 0.1.0 | 0f3da61 | test: add EvidenceReport to ingestor and annotation tests; add tuning smoke script |
 | 0.1.0 | d850c30 | docs: rewrite README for brevity and accuracy |
 | 0.1.0 | a807df9 | docs: update forge health report [skip ci] |

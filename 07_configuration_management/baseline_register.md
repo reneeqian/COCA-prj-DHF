@@ -22,6 +22,9 @@ Records the exact Git SHAs of all component repositories at each release.
 Auto-generated from `git tag -l` on the Coronary_prj repository.
 
 <!-- DHF_BASELINE_REGISTER_START -->
+| Version | SHA | Date |
+|---------|-----|------|
+| v0.1.0 | 2d1936ca94ac | 2026-06-03 15:15:13 -0700 |
 <!-- DHF_BASELINE_REGISTER_END -->
 
 ## How to Record a Baseline
