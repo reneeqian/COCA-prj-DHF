@@ -23,6 +23,8 @@ Intentional changes (new features, planned refactors) belong in
 <!-- DHF_ANOMALY_TABLE_START -->
 | ID | Discovered | Severity | Status | Description | Safety Impact | Resolution | Linked PR | Closed |
 |---|---|---|---|---|---|---|---|---|
+| ANO-001 | 2026-06-08 | low | open | SOUP CVE: torch 2.9.1 — PYSEC-2026-139 (deserialization in pt2 loading handler) | — | No upstream fix available as of 2026-06-08. The vulnerability is exploitable only if a local attacker supplies a malicious .pt2 file to the pt2 loading handler. Coronary_prj loads model checkpoints only from its own artifacts directory (controlled, local writes). No untrusted .pt2 inputs exist in the training or inference pipeline. Risk accepted pending upstream torch patch release.
+ | — | — |
 <!-- DHF_ANOMALY_TABLE_END -->
 
 ## Status Definitions
@@ -44,7 +46,8 @@ must be listed below with a rationale for why each does not pose unacceptable ri
 <!-- DHF_UNRESOLVED_ANOMALIES_START -->
 | ANO-ID | Severity | Rationale for Deferral |
 |---|---|---|
-| — | — | — |
+| ANO-001 | low | No upstream fix available as of 2026-06-08. The vulnerability is exploitable only if a local attacker supplies a malicious .pt2 file to the pt2 loading handler. Coronary_prj loads model checkpoints only from its own artifacts directory (controlled, local writes). No untrusted .pt2 inputs exist in the training or inference pipeline. Risk accepted pending upstream torch patch release.
+ |
 <!-- DHF_UNRESOLVED_ANOMALIES_END -->
 
 *If this table is empty, there are no known unresolved anomalies at submission.*
