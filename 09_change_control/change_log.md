@@ -13,6 +13,9 @@ Auto-generated from `git log --oneline --no-merges` on the Coronary_prj reposito
 <!-- DHF_CHANGE_LOG_START -->
 | Version | SHA | Description |
 |---------|-----|-------------|
+| 0.1.0 | e0fe5c2 | feat(dev): add mypy 2.1.0 as qualified verification tool (#73) |
+| 0.1.0 | 1f5cc28 | docs(health): update forge health badge — Grade A (score 0.90) |
+| 0.1.0 | c1119a4 | feat: restore forge grade A — pip CVE fix, type fixes, ruff cleanup, coverage tests |
 | 0.1.0 | 5aac480 | feat(dev): add mypy 2.1.0 as qualified verification tool |
 | 0.1.0 | 3e73bcc | chore(deps): bump actions/setup-python from 5 to 6 |
 | 0.1.0 | 766a67c | chore(deps): bump actions/dependency-review-action from 4 to 5 |
