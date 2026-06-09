@@ -5,7 +5,7 @@
 This Software Development Plan (SDP) defines the lifecycle processes, tools, standards,
 and personnel responsibilities for <!-- DHF_VAR:PROJECT_NAME -->COCA-prj<!-- /DHF_VAR:PROJECT_NAME --> per IEC 62304:2006+AMD1:2015 §5.1.
 
-Software safety class: **{{IEC_62304_CLASS}}** (see `01_device_description/software_classification.md`)
+Software safety class: **Class B** (see `01_device_description/software_classification.md`)
 
 ## 2. Lifecycle Model
 
@@ -24,15 +24,15 @@ This project follows an iterative development lifecycle:
 
 | Tool | Version | Role | Qualification |
 |---|---|---|---|
-| Python | {{PYTHON_VERSION}} | Implementation language | See `12_tool_validation/` |
-| pytest | {{PYTEST_VERSION}} | Unit and integration testing | See `12_tool_validation/` |
-| coverage.py | {{COVERAGE_VERSION}} | Test coverage measurement | See `12_tool_validation/` |
-| ruff | {{RUFF_VERSION}} | Static analysis and formatting | See `12_tool_validation/` |
-| mypy | {{MYPY_VERSION}} | Static type checking | See `12_tool_validation/` |
-| pip-audit | {{PIP_AUDIT_VERSION}} | SOUP vulnerability scanning | See `12_tool_validation/` |
-| forge-utils | {{FORGE_VERSION}} | Health grading and traceability | See `12_tool_validation/` |
+| Python | 3.10.19 | Implementation language | See `12_tool_validation/` |
+| pytest | 9.0.3 | Unit and integration testing | See `12_tool_validation/` |
+| coverage.py | 7.13.4 | Test coverage measurement | See `12_tool_validation/` |
+| ruff | 0.15.12 | Static analysis and formatting | See `12_tool_validation/` |
+| mypy | — | Static type checking (not currently installed; type enforcement via ruff rules) | See `12_tool_validation/` |
+| pip-audit | 2.10.0 | SOUP vulnerability scanning | See `12_tool_validation/` |
+| forge-utils | 0.3.0 | Health grading and traceability | See `12_tool_validation/` |
 | GitHub Actions | N/A (SaaS) | CI/CD execution | Infrastructure qualification not required (hosted service) |
-| git | {{GIT_VERSION}} | Version control | See `12_tool_validation/` |
+| git | 2.50.1 | Version control | See `12_tool_validation/` |
 
 ## 4. Applicable Standards
 

@@ -5,11 +5,12 @@ is tracked, how drift is detected, and when retraining or re-submission is trigg
 
 ## 1. Monitored Metrics
 
-| Metric | Description | Baseline Value | Alert Threshold | Critical Threshold |
-|---|---|---|---|---|
-| {{METRIC_1}} | {{DESCRIPTION}} | {{BASELINE}} | {{ALERT}} | {{CRITICAL}} |
-| {{METRIC_2}} | {{DESCRIPTION}} | {{BASELINE}} | {{ALERT}} | {{CRITICAL}} |
-| Input distribution drift | Statistical distance between incoming data and training distribution | — | p < 0.05 (KS test) | p < 0.01 |
+| Metric | Task | Description | Baseline Value | Alert Threshold | Critical Threshold |
+|---|---|---|---|---|---|
+| Dice score | Gated segmentation | Overlap between predicted mask and ground truth on a sample of new cases | ≥ 0.50 at deployment (MOD-005) | Dice < 0.55 on rolling 30-case sample | Dice < 0.50 on any 10-case batch |
+| MAE (Agatston units) | Nongated regression | Mean absolute error between predicted and ground-truth per-vessel Agatston scores | ≤ 100.0 AU at deployment (MOD-006) | MAE > 80 AU on rolling 30-case sample | MAE > 100.0 AU on any 10-case batch |
+| Input distribution drift | Both | Statistical distance between incoming DICOM HU distributions and training distribution | — | p < 0.05 (KS test on windowed HU mean) | p < 0.01 |
+| False negative rate (calcium missed) | Gated segmentation | Rate at which the model produces an empty mask when calcium is present | Estimated from test set | > 10% increase from baseline | > 25% increase from baseline |
 
 **Alert threshold:** triggers internal review within 5 business days.
 **Critical threshold:** triggers immediate suspension of deployment pending root-cause analysis.
@@ -18,22 +19,23 @@ is tracked, how drift is detected, and when retraining or re-submission is trigg
 
 | Source | Data Collected | Frequency | Retention |
 |---|---|---|---|
-| Production inference logs | Input hash, output value, timestamp, software version | Every inference | {{RETENTION_PERIOD}} |
-| User feedback / corrections | Flagged outputs, clinician overrides | Continuous | {{RETENTION_PERIOD}} |
-| {{EXTERNAL_SOURCE}} | {{DESCRIPTION}} | {{FREQUENCY}} | {{RETENTION}} |
+| Production inference logs | Input file hash, output mask/score value, timestamp, software artifact SHA-256 | Every inference | 7 years (per applicable regulatory records requirements) |
+| User feedback / corrections | Radiologist overrides or flags of AI output; cases escalated for review | Continuous | 7 years |
+| PACS audit logs | Patient ID (anonymized), study date, inference event | Continuous | Per institutional PACS retention policy |
 
-Inference logs must include: software artifact hash, input identifier, timestamp, output
-value, and confidence score (if applicable). See `10_software_development_plan/sdp.md` §8
-for the audit logging requirement.
+Inference logs must include: software artifact SHA-256, anonymized input identifier, timestamp, output value.
+See `10_software_development_plan/sdp.md` §8 (Problem Resolution) for the audit logging requirement.
 
 ## 3. Monitoring Schedule
 
 | Activity | Frequency | Responsible |
 |---|---|---|
-| Automated metric dashboard review | Weekly | {{ROLE}} |
-| Formal performance report | Quarterly | {{ROLE}} |
-| Full distribution drift analysis | Every 6 months | {{ROLE}} |
-| Post-incident review | Within 5 days of any alert | {{ROLE}} |
+| Automated metric review (if inference volume sufficient) | Weekly | Renee Qian (Software Developer) |
+| Formal performance report | Quarterly | Renee Qian |
+| Full distribution drift analysis | Every 6 months | Renee Qian |
+| Post-incident review | Within 5 days of any alert threshold breach | Renee Qian |
+
+Note: At current scale (pre-market / research deployment), monitoring is performed manually by the responsible developer. A formal monitoring dashboard will be required before broad clinical deployment.
 
 ## 4. Retraining Triggers
 
@@ -59,7 +61,7 @@ A new 510(k) or supplement is required when retraining results in:
 
 | Activity | Responsible | Escalation |
 |---|---|---|
-| Day-to-day monitoring | {{MONITORING_ROLE}} | {{ESCALATION_CONTACT}} |
-| Alert response | {{ALERT_ROLE}} | {{ESCALATION_CONTACT}} |
-| Retraining decision | {{DECISION_ROLE}} | Regulatory counsel |
-| Re-submission decision | {{SUBMISSION_ROLE}} | Regulatory counsel |
+| Day-to-day monitoring | Renee Qian (Software Developer) | N/A (solo development team) |
+| Alert response | Renee Qian | Regulatory counsel if safety-impacting |
+| Retraining decision | Renee Qian | Regulatory counsel if new submission may be required |
+| Re-submission decision | Renee Qian | Regulatory counsel (required) |

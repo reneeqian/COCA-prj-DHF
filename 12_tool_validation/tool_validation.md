@@ -17,13 +17,13 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | pytest |
-| Version | {{PYTEST_VERSION}} |
+| Version | 9.0.3 |
 | Category | Category 2 — Verification tool |
 | Intended use | Execute unit and integration tests; report pass/fail results |
 | Qualification method | Execute a known-failing test; confirm pytest reports failure. Execute a known-passing test; confirm pytest reports pass. |
 | Acceptance criteria | pytest exit code 1 on failure; exit code 0 on all-pass. Output matches expected test count. |
-| Date qualified | {{DATE}} |
-| Qualified by | {{NAME}} |
+| Date qualified | 2026-05-05 |
+| Qualified by | Renee Qian |
 
 ---
 
@@ -32,13 +32,13 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | coverage.py |
-| Version | {{COVERAGE_VERSION}} |
+| Version | 7.13.4 |
 | Category | Category 2 — Verification tool |
 | Intended use | Measure line and branch coverage of test suite; report coverage percentage |
 | Qualification method | Write a module with two branches; cover only one; confirm coverage.py reports < 100%. Cover both; confirm 100%. |
 | Acceptance criteria | Coverage report correctly identifies uncovered lines; percentage matches manual count. |
-| Date qualified | {{DATE}} |
-| Qualified by | {{NAME}} |
+| Date qualified | 2026-05-05 |
+| Qualified by | Renee Qian |
 
 ---
 
@@ -47,13 +47,13 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | ruff |
-| Version | {{RUFF_VERSION}} |
+| Version | 0.15.12 |
 | Category | Category 2 — Verification tool |
 | Intended use | Detect code style violations, potential errors, and security anti-patterns |
 | Qualification method | Introduce a known lint violation (e.g., unused import); confirm ruff flags it. Fix the violation; confirm ruff exits clean. |
 | Acceptance criteria | ruff exit code 1 when violations present; exit code 0 when clean. |
-| Date qualified | {{DATE}} |
-| Qualified by | {{NAME}} |
+| Date qualified | 2026-05-05 |
+| Qualified by | Renee Qian |
 
 ---
 
@@ -62,13 +62,14 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | mypy |
-| Version | {{MYPY_VERSION}} |
+| Version | 2.1.0 |
 | Category | Category 2 — Verification tool |
 | Intended use | Detect type errors in Python source before runtime |
 | Qualification method | Introduce a known type error (wrong argument type); confirm mypy flags it. Fix the error; confirm mypy exits clean. |
 | Acceptance criteria | mypy reports error on known type violation; exits 0 when clean. |
-| Date qualified | {{DATE}} |
-| Qualified by | {{NAME}} |
+| Date qualified | 2026-06-08 |
+| Qualified by | Renee Qian |
+| Qualification result | PASS — `mypy_qual_test.py` with `add_numbers("hello", 42)` triggered `error: Argument 1 to "add_numbers" has incompatible type "str"; expected "int" [arg-type]` (exit 1). After correction to `add_numbers(1, 42)`, mypy exited 0 with no issues. |
 
 ---
 
@@ -77,13 +78,13 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | pip-audit |
-| Version | {{PIP_AUDIT_VERSION}} |
+| Version | 2.10.0 |
 | Category | Category 2 — Verification tool |
 | Intended use | Identify known CVEs in installed Python packages against OSV and PyPI advisory databases |
 | Qualification method | Install a package with a known historical CVE in an isolated environment; confirm pip-audit reports it. |
 | Acceptance criteria | pip-audit identifies the known CVE; exit code 1 when vulnerabilities found; exit code 0 when clean. |
-| Date qualified | {{DATE}} |
-| Qualified by | {{NAME}} |
+| Date qualified | 2026-05-05 |
+| Qualified by | Renee Qian |
 
 ---
 
@@ -92,13 +93,13 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | forge-utils (`forge`) |
-| Version | {{FORGE_VERSION}} |
+| Version | 0.3.0 |
 | Category | Category 2 — Verification tool |
 | Intended use | Aggregate collector scores into a project health grade; generate traceability matrix |
 | Qualification method | Run `forge health` on a project with known coverage and requirements state; confirm grade and matrix match expected values. |
 | Acceptance criteria | Grade matches manual calculation from collector scores; traceability matrix lists all `@pytest.mark.requirement` markers. |
-| Date qualified | {{DATE}} |
-| Qualified by | {{NAME}} |
+| Date qualified | 2026-05-05 |
+| Qualified by | Renee Qian |
 
 ---
 
@@ -107,7 +108,7 @@ The required level of validation scales with how the tool is used:
 | Field | Value |
 |---|---|
 | Tool name | git |
-| Version | {{GIT_VERSION}} |
+| Version | 2.50.1 |
 | Category | Category 1 — Infrastructure tool |
 | Intended use | Track source code changes; maintain branch and tag history |
 | Qualification method | Qualification not required. Commit contents are independently verifiable by any developer via `git log` and `git diff`. |

@@ -10,6 +10,10 @@ This plan covers anticipated modifications to the <!-- DHF_VAR:PROJECT_NAME -->C
 occur post-market without a new 510(k) submission, provided they remain within the
 pre-specified bounds defined below.
 
+Two algorithm components are in scope:
+1. **Gated segmentation** — UNet2D producing a binary calcium mask; evaluated by Dice score
+2. **Nongated regression** — CalciumScoreRegressor producing per-vessel Agatston score estimates; evaluated by MAE in Agatston units
+
 ## 2. Types of Anticipated Modifications
 
 | Modification Type | Description | Requires New Submission? |
@@ -34,33 +38,42 @@ If any criterion fails, engage regulatory counsel before deployment.
 
 ## 4. Pre-Specified Performance Bounds
 
-These bounds were established at the time of initial submission and represent the
+These bounds were established at initial DHF baseline (2026-05-05) and represent the
 acceptable performance envelope for algorithm updates without re-submission.
 
-| Metric | Pre-Submission Value | Acceptable Deviation | Measurement Dataset |
-|---|---|---|---|
-| {{METRIC_1}} | {{VALUE_1}} | {{BOUND_1}} | {{TEST_SET_DESCRIPTION}} |
-| {{METRIC_2}} | {{VALUE_2}} | {{BOUND_2}} | {{TEST_SET_DESCRIPTION}} |
+| Metric | Task | Pre-Submission Floor/Ceiling | Acceptable Deviation | Measurement Dataset |
+|---|---|---|---|---|
+| Dice score (segmentation) | Gated UNet2D | 0.50 (floor; see MOD-005, RSK-001) | Must remain ≥ 0.50 | Locked gated test partition |
+| MAE in Agatston units (regression) | Nongated CalciumScoreRegressor | 100.0 AU (ceiling; see MOD-006, RSK-002) | Must remain ≤ 100.0 AU | Locked nongated test partition |
 
 *If post-change performance falls outside these bounds, treat the modification as a new
 submission candidate.*
+
+**Note:** `SEGMENTATION_MIN_DICE = 0.50` and `REGRESSION_MAX_MAE_AU = 100.0` are defined
+as named constants in `Coronary_prj/src/coronary_prj/thresholds.py` and are verified in CI
+(MOD-005, MOD-006, RSK-001, RSK-002 tests). Any change to these constants requires a risk
+assessment and update to this PCCP.
 
 ## 5. Locked Test Set
 
 Performance evaluation for change control uses a locked, held-out test set that is
 never used for training or hyperparameter selection.
 
-| Dataset | Version | Location | SHA-256 |
+| Dataset | Version | Location | Freeze Date |
 |---|---|---|---|
-| {{TEST_SET_NAME}} | {{VERSION}} | {{LOCATION}} | {{HASH}} |
+| COCA gated — test partition | Public release (PhysioNet) | `/Volumes/rqian1TB/coca/cocacoronarycalciumandchestcts-2/Gated_release_final/` | 2026-05-05 |
+| COCA nongated — test partition | Public release (PhysioNet) | `/Volumes/rqian1TB/coca/cocacoronarycalciumandchestcts-2/deidentified_nongated/` | 2026-05-05 |
 
-The test set is frozen at initial submission and must not be modified. Any change to the
-test set composition requires regulatory counsel review.
+Partition assignments (patient IDs in each split) are recorded in `partitions.json` in each
+training artifact directory. The test partition must not be used for training or
+hyperparameter selection. Any change to test set composition requires regulatory counsel
+review and update to this PCCP.
 
 ## 6. Monitoring Triggers for Unplanned Changes
 
 If post-market monitoring (see `13_ai_ml/model_performance_monitoring_plan.md`) detects:
-- Performance degradation outside the bounds in §4
+- Dice score falling below 0.50 on a sample of new production data
+- MAE exceeding 100.0 AU on a sample of new production data
 - A clinically significant change in output distribution
 - New failure modes not present in the original hazard analysis
 
